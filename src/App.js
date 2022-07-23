@@ -1,10 +1,16 @@
 import './App.css';
-import TodoList from './TodoList/TodoList';
-
+import ChangeColor from './Component/ChangeColor';
+import InfaniteCounter from './Component/InfaniteCounter';
+import Login from './Component/Login';
+import Profile from './Component/Profile';
 function App() {
   return (
     <div className="App">
-      <TodoList></TodoList>
+      <h1>Hellow World</h1>
+      <Profile></Profile>
+      <Login></Login>
+      <ChangeColor></ChangeColor>
+      <InfaniteCounter></InfaniteCounter>
     </div>
   );
 }
