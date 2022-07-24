@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import debounce from "lodash.debounce";
 import "../component-styles.css";
 import { useDispatch, useSelector } from "react-redux";

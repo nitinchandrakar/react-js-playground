@@ -1,7 +1,7 @@
 import React from "react";
 import "../component-styles.css";
 
-const Card = ({ name, url, id, title }) => {
+const Card = ({ url }) => {
 
   const handlePlayBack = (e) =>{
     const videoEl = e.target;
