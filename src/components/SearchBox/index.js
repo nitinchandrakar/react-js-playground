@@ -1,24 +1,35 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import debounce from "lodash.debounce";
 import "../component-styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getHistoryData } from "../../redux/actions";
 
-const SearchBox = ({ searchChange }) => {
+const SearchBox = ({ searchChange, onHistory }) => {
   const historyData = useSelector((state) => state.giphyHistory.historyList);
-  const debouncedEventHandler = useMemo(() => debounce(searchChange, 1000), []);
+  const debouncedEventHandler = useMemo(() => debounce(searchChange, 1000), [searchChange]);
   const [isHistory, setIsHistory] = useState(false);
 
+  const inputRef = useRef(null);
   const dispatch = useDispatch();
 
-  const handleOnFocus = ()=>{
-    dispatch(getHistoryData())
+  const handleOnFocus = () => {
+    dispatch(getHistoryData());
     setIsHistory(true);
-  }
+  };
 
-  const handleOnBlur = ()=>{
-    setIsHistory(false);
-  }
+  const handleHistoryClick = (e) => {
+    if (e.target.className === "search-history-item") {
+      inputRef.current.value = e.target.textContent;
+
+      onHistory( inputRef.current.value)
+    }
+  };
+
+  const handleOnBlur = () => {
+    setTimeout(() => {
+      setIsHistory(false);
+    }, 1000);
+  };
 
   return (
     <div className="search">
@@ -29,12 +40,15 @@ const SearchBox = ({ searchChange }) => {
         onChange={debouncedEventHandler}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
+        ref={inputRef}
       />
-      {isHistory && historyData ? (
-        <ul className="search-history">
-         {
-          historyData.reverse().map((list, index)=><li key={`${list}+${index}`}>{list}</li>)
-         }
+      {isHistory && historyData && historyData.length > 0 ? (
+        <ul className="search-history" onClick={handleHistoryClick}>
+          {historyData.reverse().map((list, index) => (
+            <li className="search-history-item" key={`${list}+${index}`}>
+              {list}
+            </li>
+          ))}
         </ul>
       ) : (
         ""
