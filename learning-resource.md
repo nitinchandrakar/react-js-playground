@@ -10,3 +10,7 @@
 
 # Context Api
 https://www.youtube.com/watch?v=t9WmZFnE6Hg&ab_channel=PedroTech
+
+# Js concepts
+https://www.freecodecamp.org/news/top-javascript-concepts-to-know-before-learning-react/
+

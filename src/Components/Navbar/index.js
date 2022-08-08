@@ -14,6 +14,7 @@ export default function Navbar() {
       <NavLink to="/" style={navLinkStyles}>Home</NavLink>
       <NavLink to="/about" style={navLinkStyles}>About</NavLink>
       <NavLink to="/contextapi" style={navLinkStyles}>Context Api</NavLink>
+      <NavLink to="/forwardref" style={navLinkStyles}>Forward Ref Demo</NavLink>
     </nav>
   );
 }
