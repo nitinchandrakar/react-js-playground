@@ -2,8 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import About from "./About";
 import Navbar from "./Components/Navbar";
 import { ContextApi } from "./ContextApi";
+import ForwardRefDemo from "./ForwardRef";
 import Home from "./Home";
 import NoMatch from "./Nomatch";
+import ReduceDemo from "./ReduceDemo";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/contextapi" element={<ContextApi></ContextApi>}></Route>
+        <Route path="/forwardref" element={<ForwardRefDemo></ForwardRefDemo>}></Route>
+        <Route path="/reducer" element={<ReduceDemo></ReduceDemo>}></Route>
         <Route path="*" element={<NoMatch></NoMatch>}></Route>
       </Routes>
     </>
