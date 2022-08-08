@@ -1,6 +1,8 @@
+import { NavigationButton } from "../Components/NavigationButton";
+
 function About(){
     return(<>
-        About
+        <NavigationButton></NavigationButton>
     </>)
 } 
 
