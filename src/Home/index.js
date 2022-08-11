@@ -1,6 +1,8 @@
+import { Timer } from "../Components/TImer";
+
 function Home(){
     return(<>
-        Home
+        <Timer></Timer>
     </>)
 } 
 
