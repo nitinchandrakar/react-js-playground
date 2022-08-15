@@ -5,11 +5,15 @@ export default function ForwardRefDemo() {
   const inputRef = useRef(null);
   
   function updateInput(){
-    inputRef.current.value = 'Nitin'
+    inputRef.current.value = ''
+  }
+
+  function onInputChange(e){
+      console.log(e.target.value);
   }
   return (
     <>
-      <Input ref={inputRef}></Input>
+      <Input ref={inputRef} changeHandler={onInputChange}></Input>
       <button onClick={updateInput}>Update Input</button>
     </>
   );
