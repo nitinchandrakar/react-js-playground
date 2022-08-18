@@ -18,4 +18,9 @@ https://www.freecodecamp.org/news/top-javascript-concepts-to-know-before-learnin
 https://bigfrontend.dev/react
 https://dev.to/iamludal/series/14964
 
+# React performace case studies
+1. Twitter Lite
+https://medium.com/@paularmstrong/twitter-lite-and-high-performance-react-progressive-web-apps-at-scale-d28a00e780a3
+
+
 
